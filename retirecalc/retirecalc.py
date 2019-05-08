@@ -6,14 +6,23 @@ Created on 2019. 5. 7.
 #-*- coding:utf-8 -*-
 #bs4, selenium 인스톨 필요
 import bs4
+from selenium.webdriver.chrome.options import Options
+
 
 
 from selenium import webdriver
 
+chrome_options = Options()
+chrome_options.add_argument("--headless")   
+chrome_options.add_argument("--window-size=1920x1080")     
+chrome_options.add_argument("disable-gpu")   
 
-driver = webdriver.Chrome('chromedriver.exe')
+
+driver = webdriver.Chrome('chromedriver.exe',options= chrome_options)
 driver.implicitly_wait(100)
-.
+
+
+
 
 
 
